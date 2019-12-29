@@ -2,24 +2,18 @@
 
 This is a basic Merge Sort algorithm built Python. It takes an unsorted list of integers of n length, and returns a new list of n length with those integers sorted.
 
-## Running the tests
+## Running the algorithm
 
-Explain how to run the automated tests for this system
+To run this algorithm on a custom list of numbers:
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+Edit the list ```n``` in ```$Python Merge and sort.py``` to the unsorted list you wish to sort.
 
 ```
-Give an example
+n = []
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
+Then run the python file.
 ```
-Give an example
+$Python Merge and sort.py
 ```
 
 ## Acknowledgments
