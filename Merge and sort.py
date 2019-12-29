@@ -1,5 +1,5 @@
 # n is the original, unsorted list. These are sample numbers:
-n = (10, 20, 3, 1208, 32, 3254, 65, 76, 12, 123, 123, 12222123, 2332, 23)
+n = [10, 20, 3, 1208, 32, 3254, 65, 76, 12, 123, 123, 12222123, 2332, 23]
 iA, jB = 0, 1
 emplist = []
 reflst = []
