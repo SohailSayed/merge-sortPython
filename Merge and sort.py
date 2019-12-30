@@ -1,8 +1,10 @@
 # n is the original, unsorted list. These are sample numbers:
-n = [10, 20, 3, 1208, 32, 3254, 65, 76, 12, 123, 123, 12222123, 2332, 23]
+
+n = [3, 3, 323, 324, 65657678, 23334555555, 4, 23, 2, 1, 45, 7, 56, 2]
 iA, jB = 0, 1
 emplist = []
 reflst = []
+lenlst = []
 D = []
 E = []
 
@@ -41,10 +43,13 @@ def sort(lst):
 
 
 def mergesort(list_):
-    global iA, jB, D, E
+    global iA, jB, D, E, reflst, lenlst
     i, j = 0, 0
+    lenlst.append(len(list_))
     # basecase, if only one merge is left
-    if len(D) == 2:
+    if reflst[0] == 2 or reflst[0] == 3:
+        print(list_[0])
+    elif len(D) == 2:
         iA, jB = 0, 1
         A = list_[iA]
         B = list_[jB]
@@ -67,10 +72,19 @@ def mergesort(list_):
             elif B[j] < A[i]:
                 C.append(B[j])
                 j += 1
+            elif B[j] == A[i]:
+                C.append(B[j])
+                j += 1
         print(C)
     else:
-        A = list_[iA]
-        B = list_[jB]
+        if lenlst[0] == 3 and len(list_[iA]) == 3:
+            A = list_[iA]
+            B = D[0]
+            D.pop(0)
+
+        else:
+            A = list_[iA]
+            B = list_[jB]
         nlen = len(A) + len(B)
         iA += 2
         jB += 2
@@ -90,9 +104,14 @@ def mergesort(list_):
             elif B[j] < A[i]:
                 C.append(B[j])
                 j += 1
+            elif B[j] == A[i]:
+                C.append(B[j])
+                j += 1
         D.append(C)
         if len(D) == 2:
             mergesort(D)
+        elif nlen == reflst[0]:
+            print(D[0])
         else:
             mergesort(list_)
 
